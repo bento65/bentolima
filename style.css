@@ -1,0 +1,194 @@
+/* Tela de login */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.login-container {
+  background: #222;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px #ff69b4;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+}
+
+.login-container button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.erro {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Página principal */
+.pagina-body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background: url("https://i.imgur.com/OjK4J6G.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  margin: 100px auto 0 auto;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffb6c1;
+}
+
+p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.dedicatoria {
+  margin-top: 30px;
+  font-style: italic;
+  color: #f0a6b6;
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff85c1;
+}
+
+.mensagem-extra {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fcd7e2;
+}
+
+/* Botão Tocar Música */
+#btnTocarMusica {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff1493;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#btnTocarMusica:hover {
+  background: #ff69b4;
+}
+
+/* Animação de corações */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 8s linear infinite;
+  opacity: 0.6;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .container {
+    margin: 50px 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}

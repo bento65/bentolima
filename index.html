@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bento Lima</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./ChatGPT Image 23 de jul. de 2025, 00_35_32.png" type="image/png" />
+</head>
+
+<body>
+    <!-- Tela de Senha -->
+    <div class="login-body" id="tela-senha">
+        <div class="login-container">
+            <h1>💻Sejam bem-vindos💻</h1>
+            <p>Se eu mandar mandar 1 mensagem por dia dizendo 'eu te amo'… Quantas mensagem eu mandei em 1 ano?
+                <br>Digite a resposta corretamente para continuar:
+            </p>
+            <input type="password" id="senha" placeholder="Digite a senha" />
+            <button onclick="verificarSenha()">Entrar</button>
+            <p id="erro" class="erro"></p>
+        </div>
+    </div>
+
+    <!-- Conteúdo da Página -->
+    <div class="pagina-body" id="tela-principal" style="display: none;">
+        <audio id="musicaFundo" loop>
+            <source src="./Manu Bahtidão, @MatheusEKauan - Universo (Video Oficial).mp3" type="audio/mp3" />
+            Seu navegador não suporta áudio.
+        </audio>
+
+        <div class="container">
+            <h1>💞Bom dia!💞 <br>💞Meu docinho.💞</h1>
+            <p>
+                Hoje é sábado, e o que eu mais queria era passar esse dia do seu lado, te olhando sorrir, te ouvindo
+                rir, te abraçando forte.
+                Você é meu descanso, minha paz e meu plano perfeito pro fim de semana.
+                Que seu dia seja leve, doce e cheio do meu amor — porque mesmo longe, tô pensando em você o tempo todo.
+                😘🔥
+
+
+
+            </p>
+            <div class="dedicatoria">💞 Com amor, Bento 💞</div>
+            <button onclick="mostrarMensagem()">Clique para ler mais...</button>
+
+            <button id="btnTocarMusica" style="display: none" onclick="tocarMusicaManual()">
+                🎵 Tocar música
+            </button>
+
+            <div id="mensagemExtra" class="mensagem-extra">
+                💞 Tivemos nossos afastamentos,
+                Mas o desejo e o amor sempre nos puxaram de volta.
+                Você é minha tentação constante,
+                Minha confusão preferida.
+                Meu recomeço preferido. 💞
+            </div>
+        </div>
+
+        <div class="hearts" id="hearts"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="coracoes.js"></script>
+</body>
+
+</html>
