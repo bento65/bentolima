@@ -1,194 +1,135 @@
-/* Tela de login */
+:root {
+    --primary: #ff4d6d;
+    --secondary: #ff8fa3;
+    --bg-dark: #1a0a0d;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+}
+
+/* Login Moderno */
 .login-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #111;
-  color: white;
-  font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #4a0e0e 0%, #1a0a0d 100%);
 }
 
 .login-container {
-  background: #222;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 20px #ff69b4;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    max-width: 350px;
 }
 
-.login-container input {
-  padding: 10px;
-  margin-top: 10px;
-  width: 200px;
-  border-radius: 8px;
-  border: none;
+.icon-lock { font-size: 3rem; margin-bottom: 10px; }
+
+input {
+    padding: 12px;
+    margin-top: 20px;
+    width: 80%;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+    font-size: 1rem;
 }
 
-.login-container button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #ff69b4;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.erro {
-  color: red;
-  margin-top: 10px;
-}
-
-/* Página principal */
+/* Estilo da Página Principal */
 .pagina-body {
-  margin: 0;
-  padding: 0;
-  font-family: Georgia, serif;
-  background: url("https://i.imgur.com/OjK4J6G.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  overflow: hidden;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.6);
-  margin: 100px auto 0 auto;
-  max-width: 800px;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
-  z-index: 2;
-  position: relative;
+    background: rgba(20, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid var(--primary);
+    animation: fadeIn 1.5s ease-out;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffb6c1;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
 }
 
-p {
-  font-size: 1.3rem;
-  line-height: 1.6;
+.date-badge {
+    background: var(--primary);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.dedicatoria {
-  margin-top: 30px;
-  font-style: italic;
-  color: #f0a6b6;
+.texto-principal {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffe5ec;
 }
 
-button {
-  margin-top: 30px;
-  padding: 12px 25px;
-  font-size: 1rem;
-  background: #ff69b4;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.btn-primary, .btn-music {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
 }
 
-button:hover {
-  background: #ff85c1;
-}
+.btn-primary:hover { transform: scale(1.05); background: #ff758f; }
 
 .mensagem-extra {
-  display: none;
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #fcd7e2;
-}
-
-/* Botão Tocar Música */
-#btnTocarMusica {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #ff1493;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-#btnTocarMusica:hover {
-  background: #ff69b4;
-}
-
-/* Animação de corações */
-.hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  transform: rotate(45deg);
-  animation: float 8s linear infinite;
-  opacity: 0.6;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
-  left: -10px;
-  top: 0;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-10vh) rotate(45deg);
-    opacity: 0;
-  }
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .container {
-    margin: 50px 20px;
+    display: none;
+    margin-top: 30px;
     padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  p {
-    font-size: 1.1rem;
-  }
+    border-top: 1px solid var(--glass);
+    font-style: italic;
+    color: var(--secondary);
+    animation: slideUp 0.5s ease;
 }
+
+/* Corações */
+.heart {
+    position: absolute;
+    color: var(--primary);
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    animation: fly linear infinite;
+}
+
+@keyframes fly {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
