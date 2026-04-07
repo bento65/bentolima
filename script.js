@@ -48,3 +48,30 @@ function createHeart() {
         heart.remove();
     }, 5000);
 }
+
+function verificarSenha() {
+    const senhaCorreta = "60"; 
+    const senhaDigitada = document.getElementById("senha").value;
+    const erro = document.getElementById("erro");
+    const musica = document.getElementById("musicaFundo");
+
+    if (senhaDigitada === senhaCorreta) {
+        // Tenta tocar a música IMEDIATAMENTE após o clique
+        musica.play().then(() => {
+            console.log("Música iniciada com sucesso!");
+        }).catch((e) => {
+            console.log("O navegador bloqueou o autoplay. O botão secundário aparecerá.");
+            document.getElementById("btnTocarMusica").style.display = "inline-block";
+        });
+
+        // Troca as telas
+        document.getElementById("tela-senha").style.display = "none";
+        document.getElementById("tela-principal").style.display = "flex";
+
+        // Inicia o efeito visual
+        setInterval(createHeart, 300);
+        
+    } else {
+        erro.textContent = "Humm... tente pensar com o coração! ❤️";
+    }
+}
