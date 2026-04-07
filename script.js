@@ -3,18 +3,25 @@ function verificarSenha() {
     const senhaDigitada = document.getElementById("senha").value;
     const erro = document.getElementById("erro");
     const musica = document.getElementById("musicaFundo");
+    const telaSenha = document.getElementById("tela-senha");
+    const telaPrincipal = document.getElementById("tela-principal");
 
     if (senhaDigitada === senhaCorreta) {
-        document.getElementById("tela-senha").style.fadeOut; // Adiciona efeito de sumir
-        document.getElementById("tela-senha").style.display = "none";
-        document.getElementById("tela-principal").style.display = "flex";
-
-        // Inicia os corações
-        setInterval(createHeart, 300);
-
-        musica.play().catch(() => {
+        // 1. Tentar tocar a música imediatamente
+        musica.play().then(() => {
+            console.log("Música tocando!");
+        }).catch((e) => {
+            console.log("Autoplay bloqueado, mostrando botão manual.");
             document.getElementById("btnTocarMusica").style.display = "inline-block";
         });
+
+        // 2. Trocar as telas
+        telaSenha.style.display = "none";
+        telaPrincipal.style.display = "flex";
+
+        // 3. Iniciar corações
+        setInterval(createHeart, 300);
+        
     } else {
         erro.textContent = "Humm... tente pensar com o coração! ❤️";
         erro.style.color = "#ff8fa3";
@@ -24,7 +31,10 @@ function verificarSenha() {
 function mostrarMensagem() {
     const msg = document.getElementById("mensagemExtra");
     msg.style.display = "block";
-    window.scrollTo(0, document.body.scrollHeight);
+    // Pequeno atraso para o scroll funcionar após o elemento aparecer
+    setTimeout(() => {
+        msg.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
 }
 
 function tocarMusicaManual() {
@@ -34,44 +44,20 @@ function tocarMusicaManual() {
 }
 
 function createHeart() {
+    const container = document.getElementById("hearts");
+    if (!container) return;
+
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 10 + "px";
-    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-    heart.style.opacity = Math.random();
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    heart.style.opacity = Math.random() * 0.5 + 0.5;
     
-    document.getElementById("hearts").appendChild(heart);
+    container.appendChild(heart);
     
     setTimeout(() => {
         heart.remove();
-    }, 5000);
-}
-
-function verificarSenha() {
-    const senhaCorreta = "60"; 
-    const senhaDigitada = document.getElementById("senha").value;
-    const erro = document.getElementById("erro");
-    const musica = document.getElementById("musicaFundo");
-
-    if (senhaDigitada === senhaCorreta) {
-        // Tenta tocar a música IMEDIATAMENTE após o clique
-        musica.play().then(() => {
-            console.log("Música iniciada com sucesso!");
-        }).catch((e) => {
-            console.log("O navegador bloqueou o autoplay. O botão secundário aparecerá.");
-            document.getElementById("btnTocarMusica").style.display = "inline-block";
-        });
-
-        // Troca as telas
-        document.getElementById("tela-senha").style.display = "none";
-        document.getElementById("tela-principal").style.display = "flex";
-
-        // Inicia o efeito visual
-        setInterval(createHeart, 300);
-        
-    } else {
-        erro.textContent = "Humm... tente pensar com o coração! ❤️";
-    }
+    }, 6000);
 }
